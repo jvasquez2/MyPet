@@ -4,5 +4,6 @@
 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
 
-<definition name="default"></definition>
+	<definition name="d_principal" template="paginas/principal.jsp">
+	</definition>
 </tiles-definitions>

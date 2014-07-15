@@ -8,15 +8,11 @@
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>
  
- <package name="demo" extends="tiles-default"
- namespace="/"> 
+ <package name="demo" extends="tiles-default" >
  
  	<action name="inicio">
-			<result>/WEB-INF/paginas/principal.jsp</result>
-		</action>
- 	
- 	
+		<result type="tiles">d_principal</result>
+	</action>  
  
  </package> 
- 
 </struts> 
