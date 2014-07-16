@@ -4,6 +4,18 @@
  "http://struts.apache.org/dtds/struts-2.3.dtd"> 
  
 <struts> 
+
+ <include file="struts-boleta.xml"/>
+ <include file="struts-cliente.xml"/>
+ <include file="struts-detalle_boleta.xml"/>
+ <include file="struts-estado.xml"/>
+ <include file="struts-mascota.xml"/>
+ <include file="struts-medico.xml"/>
+ <include file="struts-producto.xml"/>
+ <include file="struts-tabla_postal.xml"/>
+ <include file="struts-tipo_usuario.xml"/>
+ <include file="struts-usuario.xml"/>
+ <include file="struts-variables.xml"/>
  
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>
