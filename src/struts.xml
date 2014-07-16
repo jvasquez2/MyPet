@@ -19,12 +19,14 @@
  
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>
+ <constant name="struts.devMode" value="true" />
  
- <package name="demo" extends="tiles-default" >
+ <package name="demo" namespace= "/" extends="tiles-default"  >
+ 
  
  	<action name="inicio">
 		<result type="tiles">d_principal</result>
-	</action>  
+	</action>
  
  </package> 
 </struts> 
