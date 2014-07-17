@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class Estado implements Serializable {
+public class Sexo implements Serializable {
 
 	private int id;
 	private String descripcion;

@@ -2,11 +2,18 @@ package bean;
 
 import java.io.Serializable;
 
-public class Estado implements Serializable {
+public class Raza implements Serializable {
 
+	private Especie especie;
 	private int id;
 	private String descripcion;
-	
+
+	public Especie getEspecie() {
+		return especie;
+	}
+	public void setEspecie(Especie especie) {
+		this.especie = especie;
+	}
 	public int getId() {
 		return id;
 	}

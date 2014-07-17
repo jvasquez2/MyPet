@@ -16,6 +16,9 @@
  <include file="struts-tipo_usuario.xml"/>
  <include file="struts-usuario.xml"/>
  <include file="struts-variables.xml"/>
+ <include file="struts-especie.xml"/>
+ <include file="struts-raza.xml"/>
+ <include file="struts-especialidad.xml"/>
  
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>

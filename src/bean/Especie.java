@@ -2,8 +2,8 @@ package bean;
 
 import java.io.Serializable;
 
-public class Estado implements Serializable {
-
+public class Especie implements Serializable {
+	
 	private int id;
 	private String descripcion;
 	
@@ -21,4 +21,5 @@ public class Estado implements Serializable {
 	}
 	
 	
+
 }
