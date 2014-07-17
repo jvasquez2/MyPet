@@ -8,7 +8,7 @@
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>
  
- <package name="cliente" extends="demo" namespace="/cliente" >
+ <package name="cliente" extends="default" namespace="/cliente" >
  
  </package> 
 </struts> 

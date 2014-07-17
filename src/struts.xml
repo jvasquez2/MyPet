@@ -21,7 +21,7 @@
  		   value="textos"/>
  <constant name="struts.devMode" value="true" />
  
- <package name="demo" namespace= "/" extends="tiles-default"  >
+<package name="default" extends="tiles-default" namespace="/"> 
  
  
  	<action name="inicio">
