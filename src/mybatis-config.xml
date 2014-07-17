@@ -5,7 +5,23 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
  
 <configuration> 
- 
+  <typeAliases>
+ 	<typeAlias type="bean.Boleta" alias="boleta"/>
+    <typeAlias type="bean.Cliente" alias="cliente"/>
+    <typeAlias type="bean.Detalle_Boleta" alias="detalle_boleta"/>
+    <typeAlias type="bean.Especialidad" alias="especialidad"/>
+    <typeAlias type="bean.Especie" alias="especie"/>
+    <typeAlias type="bean.Estado" alias="estado"/>
+    <typeAlias type="bean.Mascota" alias="mascota"/>
+    <typeAlias type="bean.Medico" alias="medico"/>
+    <typeAlias type="bean.Producto" alias="producto"/>
+    <typeAlias type="bean.Raza" alias="raza"/>
+    <typeAlias type="bean.Sexo" alias="sexo"/>
+    <typeAlias type="bean.Tabla_Postal" alias="tabla_postal"/>
+    <typeAlias type="bean.Tipo_Usuario" alias="tipo_usuario"/>
+    <typeAlias type="bean.Usuario" alias="usuario"/>
+    <typeAlias type="bean.Variables" alias="variables"/>
+ </typeAliases>
  <environments default="clase">
     
         <environment id="clase">
