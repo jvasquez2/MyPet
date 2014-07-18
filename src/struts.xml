@@ -19,6 +19,7 @@
  <include file="struts-especie.xml"/>
  <include file="struts-raza.xml"/>
  <include file="struts-especialidad.xml"/>
+ <include file="struts-sexo.xml"/>
  
  <constant name="struts.custom.i18n.resources" 
  		   value="textos"/>
