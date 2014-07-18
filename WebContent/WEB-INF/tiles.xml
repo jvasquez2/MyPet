@@ -4,6 +4,15 @@
 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
 
-	<definition name="d_principal" template="/WEB-INF/paginas/principal.jsp">
+  	<definition name="d_principal" template="/plantillas/template.jsp">
+		<put-attribute name="cabecera" value="/secciones/cabecera.jsp" />
+		<put-attribute name="contenido" value="/WEB-INF/paginas/principal.jsp" />
+		<put-attribute name="pie" value="/secciones/pie.jsp" />
 	</definition>
+
+	<definition name="d_login" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/login.jsp" />
+	</definition>
+
+
 </tiles-definitions>
