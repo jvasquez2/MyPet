@@ -26,10 +26,12 @@
  <constant name="struts.devMode" value="true" />
  
 <package name="default" extends="tiles-default" namespace="/"> 
- 
- 
  	<action name="inicio">
 		<result type="tiles">d_principal</result>
+	</action>
+	
+	<action name="login">
+		<result type="tiles">d_login</result>
 	</action>
  
  </package> 
