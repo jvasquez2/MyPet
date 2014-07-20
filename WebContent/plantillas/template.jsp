@@ -11,8 +11,7 @@
 <!-- Estilos -->
 <link href="${pageContext.request.contextPath}/css/bootstrap.css"
 	rel="stylesheet" type="text/css">
-<link
-	href="${pageContext.request.contextPath}/css/bootstrap-responsive.css"
+<link href="${pageContext.request.contextPath}/css/bootstrap-theme.css"
 	rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mypet.css"
 	rel="stylesheet" type="text/css">
@@ -25,44 +24,25 @@
 
 <body>
 	<div id="container">
-		<div>
+		<div class="container">
 			<!-- CABECERA -->
 			<tiles:insertAttribute name="cabecera" />
 		</div>
 
-		<div>
+		<div class = "inline-form">
 			<!-- CONTENIDO -->
 			<tiles:insertAttribute name="contenido" />
 		</div>
 		<div class="clear"></div>
 	</div>
-	
+
 	<div id="footer">
 		<!-- PIE  -->
 		<tiles:insertAttribute name="pie" />
 	</div>
 
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-transition.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap-alert.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap-modal.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-dropdown.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-scrollspy.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap-tab.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-tooltip.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-popover.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap-button.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-collapse.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-carousel.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/js/bootstrap-typeahead.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+
 </body>
 </html>

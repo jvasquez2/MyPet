@@ -13,6 +13,10 @@
 	<definition name="d_login" extends="d_principal">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/login.jsp" />
 	</definition>
+	
+	<definition name="d_registrar" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarCliente.jsp" />
+	</definition>
 
 
 </tiles-definitions>

@@ -5,7 +5,7 @@
 		<input type="password" class="input-block-level"
 			placeholder="Contraseña">
 		<button class="btn btn-large btn-primary" type="submit">Aceptar</button>
-		<button class="btn btn-large btn-primary" type="submit">Registrarse</button>
+		<input type="button" class="btn btn-large btn-primary" onclick="registrar.action" value="Registrarse">
 	</form>
 
 </div>

@@ -33,6 +33,10 @@
 	<action name="login">
 		<result type="tiles">d_login</result>
 	</action>
+	
+	<action name="registrar">
+		<result type="tiles">d_registrar</result>
+	</action>
  
  </package> 
 </struts> 

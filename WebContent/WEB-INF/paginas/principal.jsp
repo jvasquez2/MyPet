@@ -10,6 +10,37 @@
 <body>
 	<h2>PAGINA PRINCIPAL DE MY PET</h2>
 	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
 	
 	<!-- <s:url action = "login.action" namespace = "/" >Iniciar sesion</s:url> -->
 </body>
