@@ -17,6 +17,10 @@
 	<definition name="d_registrar" extends="d_principal">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarCliente.jsp" />
 	</definition>
+	
+	<definition name="d_registrarMascota" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarMascota.jsp"/>
+	</definition>
 
 
 </tiles-definitions>

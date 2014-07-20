@@ -10,5 +10,10 @@
  
  <package name="mascota" extends="default" namespace="/mascota" >
  
+ 	<action name="registrarMascota" class="presentacion.action.MascotaAction"
+ 			method="registrar">
+ 		<result name="input" type="tiles">d_registrarMascota</result>
+ 	</action>
+ 
  </package> 
 </struts> 

@@ -37,6 +37,10 @@
 	<action name="registrar">
 		<result type="tiles">d_registrar</result>
 	</action>
+	
+	<action name="registrarMascota">
+		<result type="tiles">d_registrarMascota</result>
+	</action>
  
  </package> 
 </struts> 
