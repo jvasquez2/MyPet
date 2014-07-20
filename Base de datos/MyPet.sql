@@ -188,3 +188,18 @@ CREATE TABLE IF NOT EXISTS cita (
   FOREIGN KEY (DNI_CLIENTE, ID_MASCOTA) REFERENCES mascota(DNI, ID),
   FOREIGN KEY (DNI_CLIENTE) REFERENCES cliente(DNI)
 );
+
+insert into estado values (1,"ACTIVO");
+insert into estado values (2,"INACTIVO");
+
+INSERT INTO tipo_usuario VALUES (1,"ADMINISTRADOR");
+INSERT INTO tipo_usuario VALUES (2,"CLIENTE");
+INSERT INTO tipo_usuario VALUES (3,"EMPLEADO");
+
+insert into usuario values ("45747226","123","2014-01-01",1,1);
+
+select * from usuario;
+
+SELECT CODIGO, CLAVE, FECHA_INGRESO,ESTADO,TIPO_USUARIO
+		FROM USUARIO
+		WHERE CODIGO="45747226" AND CLAVE = "123"

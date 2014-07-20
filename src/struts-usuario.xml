@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE struts PUBLIC 
  "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
- "http://struts.apache.org/dtds/struts-2.3.dtd"> 
- 
-<struts> 
- 
- <constant name="struts.custom.i18n.resources" 
- 		   value="textos"/>
- 
- <package name="usuario" extends="default" namespace="/usuario" >
- 
- </package> 
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.custom.i18n.resources" value="textos" />
+
+	<package name="usuario" extends="default" namespace="/usuario">
+		<action name="verificarUsuario" class="presentacion.action.UsuarioAction"
+			method="buscarUsuario">
+			<result type="tiles" name="error">d_login</result>
+			<result type="tiles">d_principal</result>
+		</action>
+	</package>
 </struts> 

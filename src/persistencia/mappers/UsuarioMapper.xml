@@ -7,5 +7,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="persistencia.mappers.UsuarioMapper">
 	
+	<resultMap type="usuario" id="rmUsuario">
+		<result column="CODIGO" jdbcType="VARCHAR" property="codigo"/>
+		<result column="CLAVE" jdbcType="VARCHAR" property="clave"/>
+		<result column="FECHA_INGRESO" jdbcType="DATE" property="fecha_ingreso"/>
+		<result column="ESTADO" jdbcType="INTEGER" property="estado" javaType="estado"/>
+		<result column="TIPO_USUARIO" jdbcType="INTEGER" property="tipo_usuario" javaType="tipo_usuario" />
+	</resultMap>
+
+	
+	<select id="buscarUsuario" parameterType="usuario" resultMap="rmUsuario"> 
+		SELECT CODIGO, CLAVE, FECHA_INGRESO,ESTADO,TIPO_USUARIO
+		FROM USUARIO
+		WHERE CODIGO=#{codigo} AND CLAVE = #{clave}
+	</select>
  
 </mapper> 

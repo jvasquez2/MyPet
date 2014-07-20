@@ -5,11 +5,18 @@ import java.util.Date;
 
 public class Usuario implements Serializable {
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) { 
+		this.usuario = usuario;
+	}
 	private String codigo;
 	private String clave;
 	private Date fecha_ingreso;
-	private Estado estado;;
+	private Estado estado;
 	private Tipo_Usuario tipo_usuario;
+	private Usuario usuario;
 	
 
 	public String getCodigo() {

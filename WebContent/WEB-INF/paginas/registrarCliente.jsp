@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form class="form-horizontal" action="registrarCliente" namespace="/cliente">
 	<fieldset>
 
 		<!-- Form Name -->
@@ -101,11 +101,8 @@
 		<!-- Button -->
 		<div class="form-group">
 			<label class="col-md-5 control-label" for="registrar"></label>
-			<div class="col-md-6">
+			<div class="col-md-2">
 				<input type="button" class="btn btn-large btn-primary" value="Registrar">
-				<a href="inicio.action"> 
-					<input type="button" class="btn btn-large btn-primary" value="Cancelar">
-				</a>
 			</div>
 		</div>
 
