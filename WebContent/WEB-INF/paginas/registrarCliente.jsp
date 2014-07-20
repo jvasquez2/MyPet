@@ -102,9 +102,10 @@
 		<div class="form-group">
 			<label class="col-md-5 control-label" for="registrar"></label>
 			<div class="col-md-6">
-				<button id="registrar" name="registrar" class="btn btn-primary">Registrar</button>
-				<input type="button" class="btn btn-large btn-primary"
-					onclick="registrar.action" value="Registrarse">
+				<input type="button" class="btn btn-large btn-primary" value="Registrar">
+				<a href="inicio.action"> 
+					<input type="button" class="btn btn-large btn-primary" value="Cancelar">
+				</a>
 			</div>
 		</div>
 

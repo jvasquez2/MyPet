@@ -3,9 +3,11 @@
 		<h2 class="form-signin-heading">Ingresar...</h2>
 		<input type="text" class="input-block-level" placeholder="Dni">
 		<input type="password" class="input-block-level"
-			placeholder="Contraseña">
-		<button class="btn btn-large btn-primary" type="submit">Aceptar</button>
-		<input type="button" class="btn btn-large btn-primary" onclick="registrar.action" value="Registrarse">
+			placeholder="Contraseña"> 
+		<input type="button" class="btn btn-large btn-primary" value=Aceptar>
+		<a href="registrar.action"> 
+			<input type="button" class="btn btn-large btn-primary" value="Registrarse">
+		</a>
 	</form>
 
 </div>

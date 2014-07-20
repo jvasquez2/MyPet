@@ -15,32 +15,6 @@
 	</br>
 	</br>
 	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
 	
 	<!-- <s:url action = "login.action" namespace = "/" >Iniciar sesion</s:url> -->
 </body>
