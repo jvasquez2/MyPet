@@ -1,14 +1,18 @@
-<form class="form-horizontal">
+<%@taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+
+<s:form cssClass="form-horizontal" theme="bootstrap" action="registrarMascota" namespace="/mascota">
+
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend>Registrar Mascota</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Text Input</label>  
+  <label class="col-md-4 control-label" for="nombre">Nombre:</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+  <input id="nombre" name="nombre" type="text" placeholder="Nombre de mascosta" class="form-control input-md">
   <span class="help-block">help</span>  
   </div>
 </div>
@@ -45,4 +49,4 @@
 </div>
 
 </fieldset>
-</form>
+</s:form>
