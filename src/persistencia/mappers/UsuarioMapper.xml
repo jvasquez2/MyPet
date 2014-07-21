@@ -11,14 +11,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="CODIGO" jdbcType="VARCHAR" property="codigo"/>
 		<result column="CLAVE" jdbcType="VARCHAR" property="clave"/>
 		<result column="FECHA_INGRESO" jdbcType="DATE" property="fecha_ingreso"/>
-		<result column="ESTADO" jdbcType="INTEGER" property="estado" javaType="estado"/>
-		<result column="TIPO_USUARIO" jdbcType="INTEGER" property="tipo_usuario" javaType="tipo_usuario" />
+		
+		<association property="estado" javaType="estado">
+            <result column="DESCRIPCION" property="descripcion"/>
+        </association>
+        
+        <association property="tipo_usuario" javaType="tipo_usuario">
+            <result column="DESCRIPCION" property="descripcion"/>
+        </association> 
+	
 	</resultMap>
 
-	
+	 
 	<select id="buscarUsuario" parameterType="usuario" resultMap="rmUsuario"> 
-		SELECT CODIGO, CLAVE, FECHA_INGRESO,ESTADO,TIPO_USUARIO
-		FROM USUARIO
+		SELECT CODIGO, CLAVE, FECHA_INGRESO, E.DESCRIPCION, TU.DESCRIPCION
+		FROM USUARIO U
+		INNER JOIN ESTADO E
+		ON U.ESTADO = E.ID
+		INNER JOIN TIPO_USUARIO TU
+		ON U.TIPO_USUARIO = TU.ID
 		WHERE CODIGO=#{codigo} AND CLAVE = #{clave}
 	</select>
  

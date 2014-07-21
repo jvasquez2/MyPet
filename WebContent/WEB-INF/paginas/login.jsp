@@ -10,7 +10,7 @@
 		<s:submit cssClass="btn btn-large btn-primary" type="submit" value="Aceptar" />
 	</s:form>
 	
-	<s:form cssClass="form-signup" theme="bootstrap" action="registrar" namespace="/">
+	<s:form cssClass="form-signup" theme="bootstrap" action="registrarCliente" namespace="/">
 		<button class="btn btn-large btn-primary" >Registrarse</button>
 	</s:form>
 	

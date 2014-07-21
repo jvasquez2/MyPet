@@ -34,7 +34,7 @@
 		<result type="tiles">d_login</result>
 	</action>
 	
-	<action name="registrar">
+	<action name="registrarCliente">
 		<result type="tiles">d_registrar</result>
 	</action>
 	

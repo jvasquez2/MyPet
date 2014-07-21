@@ -1,6 +1,8 @@
-<form class="form-horizontal" action="registrarCliente" namespace="/cliente">
+<%@taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
+<s:form cssClass="form-horizontal" theme="bootstrap"
+	action="registrarCliente" namespace="/cliente">
 	<fieldset>
-
 		<!-- Form Name -->
 		<legend align="center">Registrar cliente</legend>
 
@@ -80,21 +82,18 @@
 		<div class="form-group">
 			<label class="col-md-5 control-label" for="sexo">Sexo</label>
 			<div class="col-md-2">
-				<select id="sexo" name="sexo" class="form-control">
-					<option value="1">Option one</option>
-					<option value="2">Option two</option>
-				</select>
+				<s:select name="cliente.sexo.id" list="#application.sexos"
+					listKey="id" listValue="descripcion"/>
 			</div>
 		</div>
 
 		<!-- Select Basic -->
 		<div class="form-group">
-			<label class="col-md-5 control-label" for="distrito">Distrito</label>
+			<label class="col-md-5 control-label">Distrito</label>
 			<div class="col-md-2">
-				<select id="distrito" name="distrito" class="form-control">
-					<option value="1">Option one</option>
-					<option value="2">Option two</option>
-				</select>
+				<s:select name="cliente.tabla_postal.id" list="#application.postales"
+					listKey="id" listValue="descripcion" />
+
 			</div>
 		</div>
 
@@ -102,9 +101,10 @@
 		<div class="form-group">
 			<label class="col-md-5 control-label" for="registrar"></label>
 			<div class="col-md-2">
-				<input type="button" class="btn btn-large btn-primary" value="Registrar">
+				<input type="button" class="btn btn-large btn-primary"
+					value="Registrar">
 			</div>
 		</div>
 
 	</fieldset>
-</form>
+</s:form>
