@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE struts PUBLIC 
  "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
- "http://struts.apache.org/dtds/struts-2.3.dtd"> 
- 
-<struts> 
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
 
- <include file="struts-boleta.xml"/>
- <include file="struts-cliente.xml"/>
- <include file="struts-detalle_boleta.xml"/>
- <include file="struts-estado.xml"/>
- <include file="struts-mascota.xml"/>
- <include file="struts-medico.xml"/>
- <include file="struts-producto.xml"/>
- <include file="struts-tabla_postal.xml"/>
- <include file="struts-tipo_usuario.xml"/>
- <include file="struts-usuario.xml"/>
- <include file="struts-variables.xml"/>
- <include file="struts-especie.xml"/>
- <include file="struts-raza.xml"/>
- <include file="struts-especialidad.xml"/>
- <include file="struts-sexo.xml"/>
- 
- <constant name="struts.custom.i18n.resources" 
- 		   value="textos"/>
- <constant name="struts.devMode" value="true" />
- 
-<package name="default" extends="tiles-default" namespace="/"> 
- 	<action name="inicio">
-		<result type="tiles">d_principal</result>
-	</action>
-	
-	<action name="login">
-		<result type="tiles">d_login</result>
-	</action>
-	
-	<action name="registrarCliente">
-		<result type="tiles">d_registrar</result>
-	</action>
-	
-	<action name="registrarMascota">
-		<result type="tiles">d_registrarMascota</result>
-	</action>
- 
- </package> 
+<struts>
+
+	<include file="struts-boleta.xml" />
+	<include file="struts-cliente.xml" />
+	<include file="struts-detalle_boleta.xml" />
+	<include file="struts-estado.xml" />
+	<include file="struts-mascota.xml" />
+	<include file="struts-medico.xml" />
+	<include file="struts-producto.xml" />
+	<include file="struts-tabla_postal.xml" />
+	<include file="struts-tipo_usuario.xml" />
+	<include file="struts-usuario.xml" />
+	<include file="struts-variables.xml" />
+	<include file="struts-especie.xml" />
+	<include file="struts-raza.xml" />
+	<include file="struts-especialidad.xml" />
+	<include file="struts-sexo.xml" />
+
+	<constant name="struts.custom.i18n.resources" value="textos" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" extends="tiles-default" namespace="/">
+		<action name="inicio">
+			<result type="tiles">d_principal</result>
+		</action>
+
+		<action name="login">
+			<result type="tiles">d_login</result>
+		</action>
+
+		<action name="registrarUsuario"> 
+			<result type="tiles">d_registrarUsuario</result>
+		</action>
+
+		<action name="registrarMascota">
+			<result type="tiles">d_registrarMascota</result>
+		</action>
+
+		<action name="registrarCita">
+			<result type="tiles">d_registrarCita</result>
+		</action>
+
+	</package>
 </struts> 

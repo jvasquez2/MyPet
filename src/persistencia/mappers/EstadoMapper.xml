@@ -6,6 +6,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  
 <mapper namespace="persistencia.mappers.EstadoMapper">
-	
+	<resultMap type="estado" id="rmEstado">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
+	</resultMap>
  
 </mapper> 

@@ -1,7 +1,9 @@
 package negocio.servicios;
 
 import java.util.HashMap;
+
 import util.Constantes;
+
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -25,6 +27,36 @@ public class UsuarioServiceImpl implements UsuarioService {
 			dto.put(Constantes.USUARIO_EXISTE,Boolean.TRUE);
 			dto.put(Constantes.OBJETO_USUARIO, usuario);
 		}else{
+			return dto;
+		}
+		
+        session.close();
+        return dto;
+	}
+
+	@Override
+	public void registrarUsuarioCliente(Usuario usuario) throws Exception {
+		SqlSession session=MyBatisUtil.getSqlSessionFactory().openSession();
+		UsuarioMapper usuarioMapper=session.getMapper(UsuarioMapper.class);
+		usuarioMapper.registrarUsuarioCliente(usuario); 
+		
+        session.commit();
+		session.close();
+	}
+
+	@Override
+	public Map<String, Object> buscarUsuarioSinClave(Usuario usuario) throws Exception {
+		
+		Map<String, Object> dto = new HashMap<String, Object>();
+		dto.put(Constantes.USUARIO_EXISTE,Boolean.FALSE);
+		
+		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
+		UsuarioMapper usuarioMapper = session.getMapper(UsuarioMapper.class);
+		usuario = usuarioMapper.buscarUsuarioSinClave(usuario); 
+        
+		if(usuario != null){
+			dto.put(Constantes.USUARIO_EXISTE,Boolean.TRUE);
+		} else {
 			return dto;
 		}
 		
