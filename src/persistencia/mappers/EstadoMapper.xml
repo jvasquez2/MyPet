@@ -10,5 +10,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id column="ID" jdbcType="INTEGER" property="id" />
 		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
 	</resultMap>
+	
+	<select id="obtenerUno" parameterType="int" resultType="estado">
+		SELECT ID, DESCRIPCION 
+		FROM ESTADO WHERE ID = #{ESTADO}
+	</select>
  
 </mapper> 

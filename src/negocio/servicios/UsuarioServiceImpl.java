@@ -35,10 +35,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void registrarUsuarioCliente(Usuario usuario) throws Exception {
+	public void registrarUsuario(Usuario usuario) throws Exception {
 		SqlSession session=MyBatisUtil.getSqlSessionFactory().openSession();
 		UsuarioMapper usuarioMapper=session.getMapper(UsuarioMapper.class);
-		usuarioMapper.registrarUsuarioCliente(usuario); 
+		usuarioMapper.registrarUsuario(usuario); 
 		
         session.commit();
 		session.close();

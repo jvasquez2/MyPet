@@ -1,5 +1,7 @@
 package persistencia.mappers;
 
-public interface ClienteMapper {
+import bean.Cliente;
 
+public interface ClienteMapper {
+	public void registrarCliente(Cliente cliente) throws Exception;
 }

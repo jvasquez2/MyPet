@@ -3,8 +3,11 @@ package presentacion.action;
 import java.util.Map;
 
 import util.Constantes;
+import negocio.servicios.ClienteService;
+import negocio.servicios.ClienteServiceImpl;
 import negocio.servicios.UsuarioService;
 import negocio.servicios.UsuarioServiceImpl;
+import bean.Cliente;
 import bean.Usuario;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -23,23 +26,6 @@ public class UsuarioAction extends ActionSupport {
 		
 		if((Boolean)dto.get(Constantes.USUARIO_EXISTE)){
 			usuario =(Usuario) dto.get(Constantes.OBJETO_USUARIO);
-
-			System.out.println("USUARIO : ");
-			System.out.println(usuario.getDni());
-			System.out.println(usuario.getNombre());
-			System.out.println(usuario.getApellido_paterno());
-			System.out.println(usuario.getClave());
-			System.out.println(usuario.getDireccion());
-			System.out.println(usuario.getEmail());
-			System.out.println(usuario.getFecha_ingreso());
-			System.out.println(usuario.getSexo().getId());
-			System.out.println(usuario.getSexo().getDescripcion());
-			System.out.println(usuario.getTipo_usuario().getId());
-			System.out.println(usuario.getTipo_usuario().getDescripcion());
-			System.out.println(usuario.getTabla_postal().getCodigo());
-			System.out.println(usuario.getTabla_postal().getDescripcion());
-			
-			
 			ActionContext.getContext().getSession().put("usuario",usuario);
 		}else{
 			addActionError(getText("error.usuario.noexiste", new String[]{usuario.getDni().toString()}));
@@ -52,16 +38,41 @@ public class UsuarioAction extends ActionSupport {
 	public String registrarUsuario() throws Exception{
 		
 		UsuarioService usuarioService=new UsuarioServiceImpl();
+		ClienteService clienteService=new ClienteServiceImpl();
 		
 		Map<String, Object> dto = usuarioService.buscarUsuarioSinClave(usuario);
 		
 		if(!(Boolean)dto.get(Constantes.USUARIO_EXISTE)){
-			usuarioService.registrarUsuarioCliente(usuario);
-			return SUCCESS;
+			//Seteamos los campos en cliente
+			Cliente cliente = new Cliente();
+			cliente.setUsuario(usuario);
+			cliente.setApellido_paterno(usuario.getApellido_paterno());
+			cliente.setApellido_materno(usuario.getApellido_materno());
+			cliente.setDireccion(usuario.getDireccion());
+			cliente.setEmail(usuario.getEmail());
+			cliente.setNombre(usuario.getNombre());
+			cliente.setSexo(usuario.getSexo());
+			cliente.setTabla_postal(usuario.getTabla_postal());
+			//***************
+
+			usuarioService.registrarUsuario(usuario);
+			clienteService.registrarCliente(cliente);
+			
+			if (ActionContext.getContext().getSession().get("usuario") == null){
+				return SUCCESS;
+			}
+			else {
+				return "SESION";
+			}
 		} else {
 			addActionError(getText("error.usuario.existente"));
 			return ERROR;
 		}
+	}
+	
+	public String cerrarSesion() throws Exception{
+		ActionContext.getContext().getSession().clear();
+		return SUCCESS;
 	}
  
 	public Usuario getUsuario() {

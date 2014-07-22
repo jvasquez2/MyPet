@@ -17,4 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM
 		TABLA_POSTAL
 	</select>
+
+	<select id="obtenerUno" parameterType="string" resultType="tabla_postal">
+		SELECT CODIGO, DESCRIPCION 
+		FROM TABLA_POSTAL WHERE CODIGO = #{CODIGO_POSTAL}
+	</select>
 </mapper> 

@@ -11,4 +11,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id column="ID" jdbcType="INTEGER" property="id" />
 		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
 	</resultMap>
+	
+	<select id="obtenerUno" parameterType="int" resultType="tipo_usuario">
+		SELECT ID, DESCRIPCION 
+		FROM TIPO_USUARIO WHERE ID = #{aa}
+	</select>
 </mapper> 

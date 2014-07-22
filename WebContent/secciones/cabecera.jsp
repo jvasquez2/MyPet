@@ -19,7 +19,7 @@
 				<li class="page-scroll"><a href="#about">Quienes somos</a></li>
 				<s:if test="#session.usuario != null">
 					<li class="dropdown">
-						<a href="inicio.action" class="dropdown-toggle" data-toggle="dropdown" >${session.usuario.tipo_usuario.descripcion}
+						<a href="inicio.action" class="dropdown-toggle" data-toggle="dropdown" >${session.usuario.nombre}
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
@@ -34,7 +34,7 @@
 							<s:elseif test="#session.usuario.tipo_usuario.id == 2">
 								<!-- Cliente -->
 								<li class="dropdown-header">Registros</li>
-								<li><a href="<s:url action="registrarUsuario" namespace="/"/>">Registrar mascota</a></li>
+								<li><a href="<s:url action="registrarMascota" namespace="/"/>">Registrar mascota</a></li>
 								<li><a href="<s:url action="registrarCita" namespace="/"/>">Registrar cita</a></li>
 							</s:elseif>
 							<s:elseif test="#session.usuario.tipo_usuario.id == 3">
@@ -45,7 +45,7 @@
 							</s:elseif>
 
 							<li class="divider"></li>
-							<li><a href="<s:url action="CerrarSesion" namespace="/"/>">Salir</a></li>
+							<li><a href="<s:url action="CerrarSesion" namespace="/usuario"/>">Salir</a></li>
 						</ul></li>
 				</s:if>
 				<s:else>
