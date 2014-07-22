@@ -22,11 +22,19 @@ public class UsuarioAction extends ActionSupport {
 		
 		UsuarioService usuarioService=new UsuarioServiceImpl();
 		
-		Map<String, Object> dto=usuarioService.buscarUsuario(usuario);
+		Map<String, Object> dtoUsuarioSinClave = usuarioService.buscarUsuarioSinClave(usuario);
 		
-		if((Boolean)dto.get(Constantes.USUARIO_EXISTE)){
-			usuario =(Usuario) dto.get(Constantes.OBJETO_USUARIO);
-			ActionContext.getContext().getSession().put("usuario",usuario);
+		if((Boolean)dtoUsuarioSinClave.get(Constantes.USUARIO_EXISTE)){
+			
+			Map<String, Object> dtoUsuarioConClave = usuarioService.buscarUsuario(usuario);
+			
+			if((Boolean)dtoUsuarioConClave.get(Constantes.USUARIO_EXISTE)){
+				usuario =(Usuario) dtoUsuarioConClave.get(Constantes.OBJETO_USUARIO);
+				ActionContext.getContext().getSession().put("usuario",usuario);
+			} else {
+				addActionError(getText("error.usuario.claveerrada"));
+				return ERROR;
+			}
 		}else{
 			addActionError(getText("error.usuario.noexiste", new String[]{usuario.getDni().toString()}));
 			return ERROR;

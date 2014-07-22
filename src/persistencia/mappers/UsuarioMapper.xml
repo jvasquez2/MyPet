@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DIRECCION, EMAIL, FECHA_INGRESO, CODIGO_POSTAL,
 		ID_SEXO, ESTADO, TIPO_USUARIO
 		FROM USUARIO
-		WHERE DNI=#{dni} AND CLAVE = #{clave}
+		WHERE DNI=#{dni}
 	</select>
 
 </mapper> 

@@ -24,10 +24,19 @@
 					action="registrarUsuario" namespace="/">
 					<button class="btn btn-large btn-primary">Registrarse</button>
 				</s:form>
-
-
-				<s:actionerror theme="bootstrap" />
 			</div>
+
+			<div class="form-group">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4" align="center">
+					<s:actionerror theme="bootstrap"/>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+
 
 		</div>
 	</div>
