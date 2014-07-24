@@ -6,5 +6,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  
 <mapper namespace="persistencia.mappers.EspecieMapper">
+
+	<resultMap type="especie" id="rmEspecie">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
+	</resultMap>
+
+	<select id="obtenerTodos" resultMap="rmEspecie">
+		SELECT ID,DESCRIPCION
+		FROM ESPECIE
+	</select>
+	
+	<select id="obtenerUno" parameterType="int" resultType="especie">
+		SELECT ID, DESCRIPCION 
+		FROM ESPECIE WHERE ID = #{ID_ESPECIE}
+	</select>
  
 </mapper> 

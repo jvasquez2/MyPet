@@ -19,6 +19,10 @@
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700'
 	rel='stylesheet' type='text/css'>
+
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css"
+	rel="stylesheet">
 <!-- *********** -->
 
 </head>

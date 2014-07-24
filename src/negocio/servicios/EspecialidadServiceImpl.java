@@ -1,5 +1,5 @@
 package negocio.servicios;
 
-public class EspecialidadServiceImpl implements EspecieService {
 
+public class EspecialidadServiceImpl implements EspecialidadService {
 }
