@@ -30,19 +30,10 @@
 				<!-- Text input-->
 				<div class="form-group">
 					<label class="col-md-5 control-label">Fecha nacimiento</label>
-					<div class='col-md-3 input-group date col-md-3'
-						id='fecha_nacimiento' data-date-format="YYYY-MM-DD">
-						<s:textfield type='text' cssClass="form-control input-md"
-							placeholder="Ej. 2014-01-01" name="mascota.fecha_nacimiento" />
-						<span class="input-group-addon"><span
-							class="glyphicon glyphicon-time"></span> </span>
-					</div>
-
-					<div class='input-group date' id='fecha_nacimiento'
-						data-date-format="YYYY/MM/DD">
-						<input type='text' class="form-control" /> <span
-							class="input-group-addon"><span
-							class="glyphicon glyphicon-time"></span> </span>
+					<div class="col-md-3">
+						<s:textfield type="text" cssClass="form-control input-md"
+							placeholder="ej: 2014-01-01" name="mascota.fecha_nacimiento"
+							id="datepicker" readonly="true" />
 					</div>
 
 				</div>
@@ -51,12 +42,26 @@
 				<div class="form-group">
 					<label class="col-md-5 control-label">Especie</label>
 					<div class="col-md-3">
+						<s:doubleselect
+							name="mascota.especie.id"         doubleName="mascota.raza.id"
+							list="#application.especies"       doubleList="#application.razas"
+							listKey="id"          doubleListKey="id"
+							listValue="descripcion"      doubleListValue="descripcion"
+							value=""   doubleValue="" />
+
+					</div>
+				</div>
+
+
+				<!--  
+				<div class="form-group">
+					<label class="col-md-5 control-label">Especie</label>
+					<div class="col-md-3">
 						<s:select name="mascota.especie.id" list="#application.especies"
 							listKey="id" listValue="descripcion" />
 					</div>
 				</div>
 
-				<!-- Select Basic -->
 				<div class="form-group">
 					<label class="col-md-5 control-label" for="tabla_postal">Distrito</label>
 					<div class="col-md-3">
@@ -64,7 +69,7 @@
 							list="#application.postales" listKey="codigo"
 							listValue="descripcion" />
 					</div>
-				</div>
+				</div> -->
 
 				<!-- Button -->
 				<div class="form-group">
@@ -83,10 +88,10 @@
 
 
 		<script type="text/javascript">
-			$(function() {
-				$('#fecha_nacimiento').datetimepicker({
-					pickTime : false
-				});
+			$('#datepicker').datepicker({
+				format : "yyyy-mm-dd",
+				language : "es",
+				autoclose : true
 			});
 		</script>
 

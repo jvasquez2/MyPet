@@ -6,13 +6,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  
 <mapper namespace="persistencia.mappers.RazaMapper">
-
-	<resultMap type="raza" id="mpRaza">
-		<id column="ID_ESPECIE" property=""/>
+ 	<resultMap type="raza" id="rmRaza">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
+		<association property="especie" column="ID_ESPECIE"
+			javaType="especie" select="persistencia.mappers.EspecieMapper.obtenerUno" />
 	</resultMap>
-	
-	<select id="getRazas">
-		SELECT ID_ESPECIE AS COD_ESP, 
+
+	<select id="obtenerTodos" parameterType="int" resultMap="rmRaza">
+		SELECT ID_ESPECIE,ID,DESCRIPCION
+		FROM RAZA WHERE ID_ESPECIE = #{ID}
+		
 	</select>
- 
 </mapper> 

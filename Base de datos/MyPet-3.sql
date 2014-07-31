@@ -200,5 +200,9 @@ insert into sexo values (1,"MASCULINO");
 insert into sexo values (2,"FEMENINO");
 insert into usuario values ("45747226","123","2014-01-01",1,1);
 
+insert into especie values (1,"PERRO");
+insert into especie values (2,"GATO");
+insert into especie values (3,"HAMSTER");
+
 select * from usuario;
 Select * from cliente;

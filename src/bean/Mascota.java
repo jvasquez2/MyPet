@@ -10,7 +10,7 @@ public class Mascota implements Serializable {
 	private String nombre;
 	private Raza raza;
 	private Especie especie;
-	private Date fecha_nacimiento;
+	private String fecha_nacimiento;
 	
 	public Cliente getCliente() {
 		return cliente;
@@ -42,10 +42,10 @@ public class Mascota implements Serializable {
 	public void setEspecie(Especie especie) {
 		this.especie = especie;
 	}
-	public Date getFecha_nacimiento() {
+	public String getFecha_nacimiento() {
 		return fecha_nacimiento;
 	}
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
+	public void setFecha_nacimiento(String fecha_nacimiento) {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 	

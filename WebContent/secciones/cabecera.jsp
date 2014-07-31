@@ -17,6 +17,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="hidden"><a href="inicio.action"></a></li>
 				<li class="page-scroll"><a href="#about">Quienes somos</a></li>
+				<li class="page-scroll"><a href="<s:url action="dondeEstamos" namespace="/"/>">Donde estamos</a></li>
 				<s:if test="#session.usuario != null">
 					<li class="dropdown">
 						<a href="inicio.action" class="dropdown-toggle" data-toggle="dropdown" >${session.usuario.nombre}
