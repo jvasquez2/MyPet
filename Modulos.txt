@@ -1,0 +1,24 @@
++ Administrador
+- Login (Hecho)
+- Mi perfil
+- Registrar cliente (Hecho)
+- Listado de cliente
+- Registrar mascota
+- Registrar cita???
+
+
++ Cliente
+- Login (Hecho)
+- Mi perfil
+- Registrar cliente (Hecho)
+- Registrar mascota
+- Registrar Cita
+
+
++ Medico
+- Login (Hecho)
+- Mi perfil
+- Consulta de citas
+- Mantener citas
+- Registrar receta
+- consultar y mantener historia clinica

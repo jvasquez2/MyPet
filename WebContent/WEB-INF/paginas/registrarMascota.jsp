@@ -8,6 +8,8 @@
 
 </s:elseif>
 <s:elseif test="#session.usuario.tipo_usuario.id == 2">
+
+
 	<div class="container">
 		<s:form cssClass="form-horizontal" theme="bootstrap"
 			action="registrarMascota" namespace="/mascota">
@@ -31,11 +33,10 @@
 				<div class="form-group">
 					<label class="col-md-5 control-label">Fecha nacimiento</label>
 					<div class="col-md-3">
-						<s:textfield type="text" cssClass="form-control input-md"
-							placeholder="ej: 2014-01-01" name="mascota.fecha_nacimiento"
-							id="datepicker" readonly="true" />
+						<s:textfield id="datepicker" type="text"
+							cssClass="form-control input-md" placeholder="Ej. 2014-01-01"
+							name="mascota.fecha_nacimiento" readonly="true" />
 					</div>
-
 				</div>
 
 				<!-- Select Basic -->
@@ -83,20 +84,19 @@
 				<s:actionerror theme="bootstrap" />
 			</fieldset>
 		</s:form>
-
-
-
-
-		<script type="text/javascript">
-			$('#datepicker').datepicker({
-				format : "yyyy-mm-dd",
-				language : "es",
-				autoclose : true
-			});
-		</script>
-
 	</div>
 </s:elseif>
 <s:elseif test="#session.usuario.tipo_usuario.id == 3">
 	<META HTTP-EQUIV="Refresh" CONTENT="0; URL=inicio.action">
 </s:elseif>
+
+<script type="text/javascript">
+	$('#datepicker').datepicker({
+		format : "yyyy-mm-dd",
+		todayBtn : "linked",
+		language : "es",
+		daysOfWeekDisabled : "0,6",
+		autoclose : true,
+		todayHighlight : true
+	});
+</script>
