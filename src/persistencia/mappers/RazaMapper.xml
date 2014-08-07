@@ -8,7 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="persistencia.mappers.RazaMapper">
 
 	<resultMap type="raza" id="mpRaza">
-		<id column="ID_ESPECIE" property=""/>
+		<association property="especie" javaType="especie">
+			<result column="ID_ESPECIE" property="id"/>
+		</association>
 	</resultMap>
 	
 	<select id="getRazas">
