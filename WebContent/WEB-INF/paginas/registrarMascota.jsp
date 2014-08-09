@@ -49,16 +49,6 @@
 					</div>
 				</div>
 
-				<!-- Select Basic -->
-				<div class="form-group">
-					<label class="col-md-5 control-label" for="tabla_postal">Distrito</label>
-					<div class="col-md-3">
-						<s:select name="usuario.tabla_postal.codigo"
-							list="#application.postales" listKey="codigo"
-							listValue="descripcion" />
-					</div>
-				</div>
-
 				<!-- Button -->
 				<div class="form-group">
 					<label class="col-md-4 control-label"></label>
