@@ -8,13 +8,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="persistencia.mappers.Tabla_PostalMapper">
 
 	<resultMap type="tabla_postal" id="rmPostal">
-		<id column="ID" jdbcType="INTEGER" property="id" />
+		<id column="CODIGO" jdbcType="INTEGER" property="codigo" />
 		<result column="DESCRIPCION" jdbcType="VARCHAR" property="descripcion" />
 	</resultMap>
 
 	<select id="obtenerTodos" resultMap="rmPostal">
-		SELECT ID,DESCRIPCION
+		SELECT CODIGO,DESCRIPCION
 		FROM
 		TABLA_POSTAL
+	</select>
+
+	<select id="obtenerUno" parameterType="string" resultType="tabla_postal">
+		SELECT CODIGO, DESCRIPCION 
+		FROM TABLA_POSTAL WHERE CODIGO = #{CODIGO_POSTAL}
 	</select>
 </mapper> 

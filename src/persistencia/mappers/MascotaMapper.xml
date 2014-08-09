@@ -2,33 +2,29 @@
  
 <!DOCTYPE mapper 
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
- "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
- 
- 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <mapper namespace="persistencia.mappers.MascotaMapper">
 
-<resultMap type="" id="">
-	
-</resultMap>
+	<insert id="registrar" parameterType="mascota">
+		INSERT INTO MASCOTA(DNI, ID, NOMBRE, ID_ESPECIE, ID_RAZA, FECHA_NACIMIENTO)
+		VALUES(#{CLIENTE.DNI}, #{ID}, #{ESPECIE.ID_ESPECIE}, #{RAZA.ID_RAZA},
+		#{FECHA_NACIMIENTO})
+	</insert>
+
+	<delete id="eliminar" parameterType="mascota">
+		DELETE FROM MASCOTA WHERE DNI = #{CLIENTE.DNI} AND #{ID}
+	</delete>
+
+	<update id="actualizar" parameterType="mascota">
+		UPDATE MASCOTA
+		SET NOMBRE = #{NOMBRE}
+		SET ID_ESPECIE = #{ESPECIE.ID_ESPECIE}
+		SET ID_RAZA = #{RAZA.ID_RAZA}
+		SET FECHA_NACIMIENTO = #{FECHA_NACIMIENTO}
+		WHERE DNI= #{CLIENTE.DNI} AND ID = #{ID}
+	</update>
 
 
-<insert id="registrar" parameterType="mascota">
-	INSERT INTO MASCOTA(DNI, ID, NOMBRE, ID_ESPECIE, ID_RAZA, FECHA_NACIMIENTO)
-	VALUES(#{CLIENTE.DNI}, #{ID}, #{ESPECIE.ID_ESPECIE}, #{RAZA.ID_RAZA}, #{FECHA_NACIMIENTO})
-</insert>
-
-<delete id="eliminar" parameterType="string, integer">
-	DELETE FROM MASCOTA WHERE DNI = #{CLIENTE.DNI} AND #{ID}
-</delete>
-
-<update id="actualizar" parameterType="mascota">
-	UPDATE MASCOTA
-	SET NOMBRE = #{NOMBRE}
-	SET ID_ESPECIE = #{ESPECIE.ID_ESPECIE}
-	SET ID_RAZA = #{RAZA.ID_RAZA}
-	SET FECHA_NACIMIENTO = #{FECHA_NACIMIENTO}
-	WHERE DNI= #{CLIENTE.DNI} AND ID = #{ID} 
-</update>
-	
- 
 </mapper> 

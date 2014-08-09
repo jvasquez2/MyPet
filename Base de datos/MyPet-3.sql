@@ -200,12 +200,9 @@ insert into sexo values (1,"MASCULINO");
 insert into sexo values (2,"FEMENINO");
 insert into usuario values ("45747226","123","2014-01-01",1,1);
 
-select * from usuario;
+insert into especie values (1,"PERRO");
+insert into especie values (2,"GATO");
+insert into especie values (3,"HAMSTER");
 
-SELECT CODIGO, CLAVE, FECHA_INGRESO, E.DESCRIPCION, TU.DESCRIPCION
-		FROM USUARIO U
-		INNER JOIN ESTADO E
-		ON U.ESTADO = E.ID
-		INNER JOIN TIPO_USUARIO TU
-		ON U.TIPO_USUARIO = TU.ID
-		WHERE CODIGO="45747226" AND CLAVE = "123";
+select * from usuario;
+Select * from cliente;

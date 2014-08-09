@@ -13,8 +13,8 @@ public class SexoServiceImpl implements SexoService {
 	@Override
 	public List<Sexo> obtenerTodos() throws Exception {
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		SexoMapper sexoMaper = session.getMapper(SexoMapper.class);
-        List<Sexo> tipos=sexoMaper.obtenerTodos();
+		SexoMapper sexoMapper = session.getMapper(SexoMapper.class);
+        List<Sexo> tipos = sexoMapper.obtenerTodos();
         
         session.close();
         return tipos;

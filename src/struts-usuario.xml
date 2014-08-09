@@ -13,5 +13,17 @@
 			<result type="tiles" name="error">d_login</result>
 			<result type="tiles">d_principal</result>
 		</action>
+
+		<action name="registrarUsuarioYCliente" class="presentacion.action.UsuarioAction"
+			method="registrarUsuario">
+			<result type="tiles" name="error">d_registrarUsuario</result>
+			<result type="tiles" name="SESION">d_principal</result>
+			<result type="tiles">d_login</result>
+		</action>
+		
+		<action name="CerrarSesion" class="presentacion.action.UsuarioAction"
+			method="cerrarSesion">
+			<result type="tiles">d_principal</result>
+		</action>
 	</package>
-</struts> 
+</struts>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
-<%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +16,19 @@
 	rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/mypet.css"
 	rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/css/datepicker.css"
+	rel="stylesheet" type="text/css">
 
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700'
 	rel='stylesheet' type='text/css'>
+
+<link
+	href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css"
+	rel="stylesheet">
+
+<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap-datepicker.js"></script>
 <!-- *********** -->
 
 </head>
@@ -30,7 +40,7 @@
 			<tiles:insertAttribute name="cabecera" />
 		</div>
 
-		<div class = "inline-form">
+		<div class="inline-form">
 			<!-- CONTENIDO -->
 			<tiles:insertAttribute name="contenido" />
 		</div>
@@ -41,9 +51,6 @@
 		<!-- PIE  -->
 		<tiles:insertAttribute name="pie" />
 	</div>
-
-	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 
 </body>
 </html>

@@ -2,24 +2,55 @@
  
 <!DOCTYPE mapper 
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
- "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
- 
- 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <mapper namespace="persistencia.mappers.UsuarioMapper">
-	
+
 	<resultMap type="usuario" id="rmUsuario">
-		<result column="CODIGO" jdbcType="VARCHAR" property="codigo"/>
-		<result column="CLAVE" jdbcType="VARCHAR" property="clave"/>
-		<result column="FECHA_INGRESO" jdbcType="DATE" property="fecha_ingreso"/>
-		<result column="ESTADO" jdbcType="INTEGER" property="estado" javaType="estado"/>
-		<result column="TIPO_USUARIO" jdbcType="INTEGER" property="tipo_usuario" javaType="tipo_usuario" />
+		<id column="DNI" jdbcType="VARCHAR" property="dni" />
+		<result column="CLAVE" jdbcType="VARCHAR" property="clave" />
+		<result column="NOMBRE" jdbcType="VARCHAR" property="nombre" />
+		<result column="APELLIDO_PATERNO" jdbcType="VARCHAR" property="apellido_paterno" />
+		<result column="APELLIDO_MATERNO" jdbcType="VARCHAR" property="apellido_materno" />
+		<result column="DIRECCION" jdbcType="VARCHAR" property="direccion" />
+		<result column="EMAIL" jdbcType="VARCHAR" property="email" />
+		<result column="FECHA_INGRESO" jdbcType="DATE" property="fecha_ingreso" />
+
+		<association property="tabla_postal" column="CODIGO_POSTAL"
+			javaType="tabla_postal" select="persistencia.mappers.Tabla_PostalMapper.obtenerUno" />
+		<association property="sexo" column="ID_SEXO" javaType="sexo"
+			select="persistencia.mappers.SexoMapper.obtenerUno" />
+		<association property="estado" column="ESTADO" javaType="estado"
+			select="persistencia.mappers.EstadoMapper.obtenerUno" />
+		<association property="tipo_usuario" column="TIPO_USUARIO"
+			javaType="tipo_usuario" select="persistencia.mappers.Tipo_UsuarioMapper.obtenerUno" />
 	</resultMap>
 
-	
-	<select id="buscarUsuario" parameterType="usuario" resultMap="rmUsuario"> 
-		SELECT CODIGO, CLAVE, FECHA_INGRESO,ESTADO,TIPO_USUARIO
+
+	<select id="buscarUsuario" parameterType="usuario" resultMap="rmUsuario">
+		SELECT DNI, CLAVE, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO,
+		DIRECCION, EMAIL, FECHA_INGRESO, CODIGO_POSTAL, ID_SEXO, ESTADO,
+		TIPO_USUARIO
 		FROM USUARIO
-		WHERE CODIGO=#{codigo} AND CLAVE = #{clave}
+		WHERE DNI=#{dni} AND CLAVE = #{clave}
 	</select>
- 
+
+	<insert id="registrarUsuario" parameterType="usuario">
+		INSERT INTO
+		USUARIO VALUES (#{dni},#{clave},#{nombre},#{apellido_paterno},
+		#{apellido_materno},#{direccion},#{tabla_postal.codigo},
+		#{sexo.id},#{email},NOW(),1,2)
+	</insert>
+
+	<select id="buscarUsuarioSinClave" parameterType="usuario"
+		resultMap="rmUsuario">
+		SELECT DNI, CLAVE, NOMBRE, APELLIDO_PATERNO,
+		APELLIDO_MATERNO,
+		DIRECCION, EMAIL, FECHA_INGRESO, CODIGO_POSTAL,
+		ID_SEXO, ESTADO, TIPO_USUARIO
+		FROM USUARIO
+		WHERE DNI=#{dni}
+	</select>
+
 </mapper> 

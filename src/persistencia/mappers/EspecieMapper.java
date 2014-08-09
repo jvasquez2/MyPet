@@ -5,7 +5,6 @@ import java.util.List;
 import bean.Especie;
 
 public interface EspecieMapper {
-	
-	List<Especie> getEspecies();
+	public List<Especie> obtenerTodos() throws Exception;
 
 }
