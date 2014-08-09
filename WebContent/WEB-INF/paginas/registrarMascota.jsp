@@ -6,7 +6,7 @@
 </s:if>
 <s:elseif test="#session.usuario.tipo_usuario.id == 1">
 
-</s:elseif>
+</s:elseif> 
 <s:elseif test="#session.usuario.tipo_usuario.id == 2">
 
 
@@ -32,7 +32,6 @@
 				<!-- Text input-->
 				<div class="form-group">
 					<label class="col-md-5 control-label">Fecha nacimiento</label>
-
 					<div class="col-md-3">
 						<s:textfield id="datepicker" type="text"
 							cssClass="form-control input-md" placeholder="Ej. 2014-01-01"
@@ -40,7 +39,7 @@
 					</div>
 				</div>
 
-				<!-- Select Basic -->
+				<!-- Select Basic -->				
 				<div class="form-group">
 					<label class="col-md-5 control-label">Especie</label>
 					<div class="col-md-3">
@@ -48,7 +47,7 @@
 							listKey="id" listValue="descripcion" />
 					</div>
 				</div>
-
+				
 				<!-- Button -->
 				<div class="form-group">
 					<label class="col-md-4 control-label"></label>
@@ -61,7 +60,6 @@
 				<s:actionerror theme="bootstrap" />
 			</fieldset>
 		</s:form>
-
 	</div>
 </s:elseif>
 <s:elseif test="#session.usuario.tipo_usuario.id == 3">

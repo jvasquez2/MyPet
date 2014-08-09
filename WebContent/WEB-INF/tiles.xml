@@ -25,6 +25,10 @@
 	<definition name="d_registrarCita" extends="d_principal">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarCita.jsp"/>
 	</definition>
+	
+	<definition name="d_dondeEstamos" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/dondeEstamos.jsp"/>
+	</definition>
 
 
 </tiles-definitions>

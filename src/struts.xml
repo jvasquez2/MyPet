@@ -44,6 +44,10 @@
 		<action name="registrarCita">
 			<result type="tiles">d_registrarCita</result>
 		</action>
+		
+		<action name="dondeEstamos">
+			<result type="tiles">d_dondeEstamos</result>
+		</action>
 
 	</package>
 </struts> 

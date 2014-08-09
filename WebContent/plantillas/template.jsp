@@ -26,12 +26,9 @@
 	href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css"
 	rel="stylesheet">
 
-
-
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
-<script
-	src="${pageContext.request.contextPath}/js/bootstrap-datepicker.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap-datepicker.js"></script>
 <!-- *********** -->
 
 </head>
