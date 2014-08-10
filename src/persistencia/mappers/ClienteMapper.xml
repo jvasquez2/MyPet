@@ -9,11 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<resultMap type="cliente" id="rmCliente">
 	
-		<result column="NOMBRE" javaType="VARCHAR" property="nombre"/>
-		<result column="APELLIDO_PATERNO" javaType="VARCHAR" property="apellido_paterno"/>
-		<result column="APELLIDO_MATERNO" javaType="VARCHAR" property="apellido_materno"/>
-		<result column="DIRECCION" javaType="VARCHAR" property="direccion"/>
-		<result column="EMAIL" javaType="VARCHAR" property="email"/>
+		<result column="NOMBRE" jdbcType="VARCHAR" property="nombre"/>
+		<result column="APELLIDO_PATERNO" jdbcType="VARCHAR" property="apellido_paterno"/>
+		<result column="APELLIDO_MATERNO" jdbcType="VARCHAR" property="apellido_materno"/>
+		<result column="DIRECCION" jdbcType="VARCHAR" property="direccion"/>
+		<result column="EMAIL" jdbcType="VARCHAR" property="email"/>
 		
 		<association property="usuario" column="DNI" javaType="usuario"
 			select="persistencia.mappers.UsuarioMapper.buscarUsuarioSinClave"/>
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="buscar" parameterType="cliente" resultMap="rmCliente">
 		SELECT DNI, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, DIRECCION, CODIGO_POSTAL,
-		ID_SEXO, EMAIL FROM CLIENTE WHERE DNI = #{USUARIO.DNI} 
+		ID_SEXO, EMAIL FROM CLIENTE WHERE DNI = #{usuario.dni} 
 	</select>
  
 </mapper> 
