@@ -204,7 +204,7 @@ INSERT INTO tabla_postal VALUES ("LIMA 08","CHACLACAYO");
 INSERT INTO tabla_postal VALUES ("LIMA 09","CHORRILLOS");
 INSERT INTO tabla_postal VALUES ("LIMA 10","EL AGUSTINO");
 insert into usuario values ("45747223","123","JUAN CARLOS","VASQUEZ","VALDIVIESO","JR. CIPRIANO RIVAS 716","LIMA 01",1,"jvaldivieso89@gmail.com",NOW(),1,1);
-
+SELECT (COUNT(*) +1) from MASCOTA WHERE DNI = "45747223";
 
 
 insert into especie values (1,"PERRO");
@@ -214,3 +214,5 @@ insert into especie values (3,"HAMSTER");
 select * from usuario where FECHA_INGRESO like ("2014-07-22%");
 select * from usuario;
 Select * from cliente;
+select * from medico;
+select * from mascota;
