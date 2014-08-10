@@ -7,5 +7,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
 <mapper namespace="persistencia.mappers.MedicoMapper">
 	
+ 	<insert id="registrarMedico" parameterType="medico">
+		INSERT INTO
+		MEDICO VALUES (#{usuario.dni},#{nombre},#{apellido_paterno},
+		#{apellido_materno},#{direccion},#{tabla_postal.codigo},
+		#{sexo.id})
+	</insert>
  
 </mapper> 

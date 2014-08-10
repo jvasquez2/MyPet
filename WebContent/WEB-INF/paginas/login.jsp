@@ -21,7 +21,7 @@
 				</s:form>
 
 				<s:form cssClass="form-signup" theme="bootstrap"
-					action="registrarUsuario" namespace="/">
+					action="registrarCliente" namespace="/">
 					<button class="btn btn-large btn-primary">Registrarse</button>
 				</s:form>
 			</div>

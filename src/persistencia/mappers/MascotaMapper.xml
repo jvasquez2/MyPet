@@ -8,22 +8,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="persistencia.mappers.MascotaMapper">
 
 	<insert id="registrar" parameterType="mascota">
-		INSERT INTO MASCOTA(DNI, ID, NOMBRE, ID_ESPECIE, ID_RAZA, FECHA_NACIMIENTO)
-		VALUES(#{CLIENTE.DNI}, #{ID}, #{ESPECIE.ID_ESPECIE}, #{RAZA.ID_RAZA},
-		#{FECHA_NACIMIENTO})
+		INSERT INTO MASCOTA VALUES (#{cliente.usuario.dni}, #{id}, #{nombre}, #{especie.id}, #{fecha_nacimiento}, #{raza})
 	</insert>
+	
+	<select id="contarMascotas" parameterType="string" resultType="int">
+		SELECT (COUNT(*) + 1) FROM  MASCOTA WHERE DNI = #{dni}
+	</select>
 
 	<delete id="eliminar" parameterType="mascota">
-		DELETE FROM MASCOTA WHERE DNI = #{CLIENTE.DNI} AND #{ID}
+		DELETE FROM MASCOTA WHERE DNI = #{cliente.usuario.dni} AND #{id}
 	</delete>
 
 	<update id="actualizar" parameterType="mascota">
 		UPDATE MASCOTA
-		SET NOMBRE = #{NOMBRE}
-		SET ID_ESPECIE = #{ESPECIE.ID_ESPECIE}
-		SET ID_RAZA = #{RAZA.ID_RAZA}
-		SET FECHA_NACIMIENTO = #{FECHA_NACIMIENTO}
-		WHERE DNI= #{CLIENTE.DNI} AND ID = #{ID}
+		SET NOMBRE = #{nombre}
+		SET ID_ESPECIE = #{especie.id}
+		SET FECHA_NACIMIENTO = #{fecha_nacimiento}
+		SET RAZA = #{raza}
+		WHERE DNI= #{cliente.usuario.dni} AND ID = #{id}
 	</update>
 
 

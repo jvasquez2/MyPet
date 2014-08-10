@@ -14,8 +14,12 @@
 		<put-attribute name="contenido" value="/WEB-INF/paginas/login.jsp" />
 	</definition>
 	
-	<definition name="d_registrarUsuario" extends="d_principal">
-		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarUsuario.jsp" />
+	<definition name="d_registrarCliente" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarCliente.jsp" />
+	</definition>
+	
+	<definition name="d_registrarMedico" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/registrarMedico.jsp" />
 	</definition>
 	
 	<definition name="d_registrarMascota" extends="d_principal">

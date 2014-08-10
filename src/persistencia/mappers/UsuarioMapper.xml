@@ -40,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO
 		USUARIO VALUES (#{dni},#{clave},#{nombre},#{apellido_paterno},
 		#{apellido_materno},#{direccion},#{tabla_postal.codigo},
-		#{sexo.id},#{email},NOW(),1,2)
+		#{sexo.id},#{email},NOW(),1,#{tipo_usuario.id})
 	</insert>
 
 	<select id="buscarUsuarioSinClave" parameterType="usuario"

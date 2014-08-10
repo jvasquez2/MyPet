@@ -8,6 +8,8 @@ public interface MascotaMapper {
 	
 	Mascota obtener(String dni);
 	
+	public int contarMascotas(String dni);
+	
 	List<Mascota> buscar(Mascota mascota);
 	
 	void registrar(Mascota mascota);
