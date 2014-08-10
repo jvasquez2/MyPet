@@ -10,12 +10,12 @@
 <body>
 	
 	<s:form action="buscarCliente" namespace="/cliente">
-		<s:textfield name="cliente.dni" key="label.dni"/>
+		<s:textfield name="cliente.usuario.dni" key="label.dni"/>
 		<s:submit value="buscar"/>
 	</s:form>
 	
 	<s:if test="!clientes.isEmpty">
-		<table class="tabla">
+		<table class="table">
 			<thead>
 				<tr>
 					<th><s:text name="label.dni"/></th>
@@ -30,13 +30,13 @@
 			</thead>
 			<s:iterator value="clientes" status="status">
 				<tr class="<s:if test="#status.even">par</s:if><s:else>impar</s:else>">
-				<td><s:property value="usuario"/></td>
+				<td><s:property value="usuario.dni"/></td>
 				<td><s:property value="nombre"/></td>
 				<td><s:property value="apellido_paterno"/></td>
 				<td><s:property value="apellido_materno"/></td>
 				<td><s:property value="direccion"/></td>
-				<td><s:property value="tabla_postal"/></td>
-				<td><s:property value="sexo"/></td>
+				<td><s:property value="tabla_postal.descripcion"/></td>
+				<td><s:property value="sexo.descripcion"/></td>
 				<td><s:property value="email"/></td>
 			</s:iterator>
 		</table>
