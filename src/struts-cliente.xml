@@ -10,5 +10,10 @@
  
  <package name="cliente" extends="default" namespace="/cliente" >
  
+ 	<action name="buscarCliente" class="presentacion.action.ClienteAction" method="buscar">
+ 		<result type="tiles">d_listarClientes</result>
+ 		<result name="input" type="tiles">d_listarClientes</result>
+ 	</action>
+ 
  </package> 
 </struts> 

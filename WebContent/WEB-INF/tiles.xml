@@ -29,6 +29,9 @@
 	<definition name="d_dondeEstamos" extends="d_principal">
 		<put-attribute name="contenido" value="/WEB-INF/paginas/dondeEstamos.jsp"/>
 	</definition>
+	<definition name="d_listarClientes" extends="d_principal">
+		<put-attribute name="contenido" value="/WEB-INF/paginas/listarClientes.jsp"/>
+	</definition>
 
 
 </tiles-definitions>
