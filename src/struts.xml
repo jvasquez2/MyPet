@@ -50,6 +50,9 @@
 		<action name="dondeEstamos">
 			<result type="tiles">d_dondeEstamos</result>
 		</action>
+		<action name="buscarCliente">
+			<result type="tiles">d_listarClientes</result>
+		</action>
 
 	</package>
 </struts> 

@@ -32,6 +32,7 @@
 								<li><a href="<s:url action="registrarMedico" namespace="/"/>">Registrar medico</a></li>
 								<li><a href="<s:url action="registrarMascota" namespace="/"/>">Registrar mascota</a></li>
 								<li><a href="<s:url action="registrarCita" namespace="/"/>">Registrar cita</a></li>
+								<li><a href="<s:url action="buscarCliente" namespace="/"/>">Buscar Cliente</a></li>
 							</s:if>
 							<s:elseif test="#session.usuario.tipo_usuario.id == 2">
 								<!-- Cliente -->
