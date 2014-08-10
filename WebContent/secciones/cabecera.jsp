@@ -28,7 +28,8 @@
 							<s:if test="#session.usuario.tipo_usuario.id == 1">
 								<!-- Administrador -->
 								<li class="dropdown-header">Registros</li>
-								<li><a href="<s:url action="registrarUsuario" namespace="/"/>">Registrar cliente</a></li>
+								<li><a href="<s:url action="registrarCliente" namespace="/"/>">Registrar cliente</a></li>
+								<li><a href="<s:url action="registrarMedico" namespace="/"/>">Registrar medico</a></li>
 								<li><a href="<s:url action="registrarMascota" namespace="/"/>">Registrar mascota</a></li>
 								<li><a href="<s:url action="registrarCita" namespace="/"/>">Registrar cita</a></li>
 							</s:if>

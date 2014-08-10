@@ -12,7 +12,7 @@
  
  	<action name="registrarMascota" class="presentacion.action.MascotaAction"
  			method="registrar">
- 		<result name="input" type="tiles">d_registrarMascota</result>
+ 		<result type="tiles">d_principal</result>
  	</action>
  
  </package> 

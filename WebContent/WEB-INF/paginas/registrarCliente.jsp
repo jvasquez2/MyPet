@@ -8,10 +8,11 @@
 
 	<div class="container">
 		<s:form cssClass="form-horizontal" theme="bootstrap"
-			action="registrarUsuarioYCliente" namespace="/usuario">
+			action="registrarUsuario" namespace="/usuario">
 			<fieldset>
 				<!-- Form Name -->
-				<legend align="center">Registrar Usuario</legend>
+				<s:hidden name="usuario.tipo_usuario.id" value="1" />
+				<legend align="center">Registrar Cliente</legend>
 
 				<!-- Text input-->
 				<div class="form-group">

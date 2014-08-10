@@ -18,13 +18,13 @@
 				<legend align="center">Registrar Mascota</legend>
 
 				<!-- Text input-->
-				<s:hidden name="mascota.cliente.dni" value="%{#session.usuario.dni}" />
+				<s:hidden name="mascota.cliente.usuario.dni" value="%{#session.usuario.dni}" />
 
 				<!-- Password input-->
 				<div class="form-group">
 					<label class="col-md-5 control-label">Nombre</label>
 					<div class="col-md-3">
-						<s:password type="text" cssClass="form-control input-md"
+						<s:textfield type="text" cssClass="form-control input-md"
 							placeholder="ej: Fido" name="mascota.nombre" />
 					</div>
 				</div>
@@ -33,9 +33,9 @@
 				<div class="form-group">
 					<label class="col-md-5 control-label">Fecha nacimiento</label>
 					<div class="col-md-3">
-						<s:textfield id="datepicker" type="text"
+						<s:textfield type="text"
 							cssClass="form-control input-md" placeholder="Ej. 2014-01-01"
-							name="mascota.fecha_nacimiento" readonly="true" />
+							name="mascota.fecha_nacimiento" readonly="false" />
 					</div>
 				</div>
 
@@ -45,6 +45,14 @@
 					<div class="col-md-3">
 						<s:select name="mascota.especie.id" list="#application.especies"
 							listKey="id" listValue="descripcion" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-md-5 control-label">Raza</label>
+					<div class="col-md-3">
+						<s:textfield type="text" cssClass="form-control input-md"
+							placeholder="ej: Pitbul" name="mascota.raza" />
 					</div>
 				</div>
 				

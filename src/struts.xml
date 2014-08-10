@@ -17,8 +17,6 @@
 	<include file="struts-usuario.xml" />
 	<include file="struts-variables.xml" />
 	<include file="struts-especie.xml" />
-	<include file="struts-raza.xml" />
-	<include file="struts-especialidad.xml" />
 	<include file="struts-sexo.xml" />
 
 	<constant name="struts.custom.i18n.resources" value="textos" />
@@ -33,8 +31,12 @@
 			<result type="tiles">d_login</result>
 		</action>
 
-		<action name="registrarUsuario"> 
-			<result type="tiles">d_registrarUsuario</result>
+		<action name="registrarCliente"> 
+			<result type="tiles">d_registrarCliente</result>
+		</action>
+		
+		<action name="registrarMedico"> 
+			<result type="tiles">d_registrarMedico</result>
 		</action>
 
 		<action name="registrarMascota">

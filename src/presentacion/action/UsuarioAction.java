@@ -5,9 +5,12 @@ import java.util.Map;
 import util.Constantes;
 import negocio.servicios.ClienteService;
 import negocio.servicios.ClienteServiceImpl;
+import negocio.servicios.MedicoService;
+import negocio.servicios.MedicoServiceImpl;
 import negocio.servicios.UsuarioService;
 import negocio.servicios.UsuarioServiceImpl;
 import bean.Cliente;
+import bean.Medico;
 import bean.Usuario;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -47,24 +50,36 @@ public class UsuarioAction extends ActionSupport {
 		
 		UsuarioService usuarioService=new UsuarioServiceImpl();
 		ClienteService clienteService=new ClienteServiceImpl();
+		MedicoService medicoService = new MedicoServiceImpl();
 		
 		Map<String, Object> dto = usuarioService.buscarUsuarioSinClave(usuario);
 		
 		if(!(Boolean)dto.get(Constantes.USUARIO_EXISTE)){
-			//Seteamos los campos en cliente
-			Cliente cliente = new Cliente();
-			cliente.setUsuario(usuario);
-			cliente.setApellido_paterno(usuario.getApellido_paterno());
-			cliente.setApellido_materno(usuario.getApellido_materno());
-			cliente.setDireccion(usuario.getDireccion());
-			cliente.setEmail(usuario.getEmail());
-			cliente.setNombre(usuario.getNombre());
-			cliente.setSexo(usuario.getSexo());
-			cliente.setTabla_postal(usuario.getTabla_postal());
-			//***************
-
 			usuarioService.registrarUsuario(usuario);
-			clienteService.registrarCliente(cliente);
+			if (usuario.getTipo_usuario().getId() == 1){
+				Cliente cliente = new Cliente();
+				cliente.setUsuario(usuario);
+				cliente.setApellido_paterno(usuario.getApellido_paterno());
+				cliente.setApellido_materno(usuario.getApellido_materno());
+				cliente.setDireccion(usuario.getDireccion());
+				cliente.setEmail(usuario.getEmail());
+				cliente.setNombre(usuario.getNombre());
+				cliente.setSexo(usuario.getSexo());
+				cliente.setTabla_postal(usuario.getTabla_postal());
+				clienteService.registrarCliente(cliente);
+				//***************
+			}
+			else {
+				Medico medico = new Medico();
+				medico.setUsuario(usuario);
+				medico.setApellido_materno(usuario.getApellido_materno());
+				medico.setApellido_paterno(usuario.getApellido_paterno());
+				medico.setNombre(usuario.getNombre());
+				medico.setDireccion(usuario.getDireccion());
+				medico.setSexo(usuario.getSexo());
+				medico.setTabla_postal(usuario.getTabla_postal());
+				medicoService.registrarMedico(medico);
+			}
 			
 			if (ActionContext.getContext().getSession().get("usuario") == null){
 				return SUCCESS;

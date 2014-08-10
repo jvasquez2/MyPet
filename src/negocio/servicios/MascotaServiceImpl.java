@@ -39,6 +39,9 @@ public class MascotaServiceImpl implements MascotaService {
 		
 		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
 		MascotaMapper mascotaMapper = session.getMapper(MascotaMapper.class);
+		
+		int id = mascotaMapper.contarMascotas(mascota.getCliente().getUsuario().getDni());
+		mascota.setId(id);
 		mascotaMapper.registrar(mascota);
 		
 		session.commit();

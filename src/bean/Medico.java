@@ -9,9 +9,28 @@ public class Medico implements Serializable {
 	private String nombre;
 	private String apellido_paterno;
 	private String apellido_materno;
-	private Especialidad especialidad;
-	private Date fecha_nacimiento;
+	private Tabla_Postal tabla_postal;
+	private Sexo sexo;
+	private String direccion;
 	
+	public Tabla_Postal getTabla_postal() {
+		return tabla_postal;
+	}
+	public void setTabla_postal(Tabla_Postal tabla_postal) {
+		this.tabla_postal = tabla_postal;
+	}
+	public Sexo getSexo() {
+		return sexo;
+	}
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -36,20 +55,6 @@ public class Medico implements Serializable {
 	public void setApellido_materno(String apellido_materno) {
 		this.apellido_materno = apellido_materno;
 	}
-	public Especialidad getEspecialidad() {
-		return especialidad;
-	}
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
-	}
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
-	}
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
-	}
-	
-	
 	
 
 }
