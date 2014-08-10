@@ -34,7 +34,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="buscar" parameterType="cliente" resultMap="rmCliente">
 		SELECT DNI, NOMBRE, APELLIDO_PATERNO, APELLIDO_MATERNO, DIRECCION, CODIGO_POSTAL,
-		ID_SEXO, EMAIL FROM CLIENTE WHERE DNI = #{usuario.dni} 
+		ID_SEXO, EMAIL FROM CLIENTE
+		<if test="usuario.dni != ''">
+			WHERE DNI = #{usuario.dni} 
+		</if>
 	</select>
  
 </mapper> 
