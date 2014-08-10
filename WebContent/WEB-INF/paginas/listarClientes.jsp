@@ -11,7 +11,7 @@
 	
 	<s:form action="buscarCliente" namespace="/cliente">
 		<s:textfield name="cliente.usuario.dni" key="label.dni"/>
-		<s:submit value="buscar"/>
+		<s:submit value="%{getText('boton.buscar')}"/>
 	</s:form>
 	
 	<s:if test="!clientes.isEmpty">
@@ -38,6 +38,16 @@
 				<td><s:property value="tabla_postal.descripcion"/></td>
 				<td><s:property value="sexo.descripcion"/></td>
 				<td><s:property value="email"/></td>
+				<td>
+					<s:url action="registrarMascota"
+					id="registrar"
+					namespace="/mascota">
+					<s:param>
+						<s:property value="cliente.usuario.dni"/>
+					</s:param>
+					</s:url>
+					<s:a href="%{registrar}"><s:text name="mascota.agregar"></s:text></s:a>
+				</td>
 			</s:iterator>
 		</table>
 	</s:if>
